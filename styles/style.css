@@ -15,8 +15,8 @@ body{
 }
 
 :root {
-    --g1: #37B5B6;
-    --g2: #6895D2;
+    --g1: #D63484;
+    --g2: #FF9BD2;
 }
 
 @keyframes background-pan {
@@ -31,7 +31,7 @@ body{
 
 .wrapper_back {
     z-index: 10;
-    animation: background-pan 10s linear infinite;
+    animation: background-pan 5s linear infinite;
     background: linear-gradient(
         to right,
         var(--g1),
@@ -66,6 +66,7 @@ body{
     opacity: 1;
     transition: opacity 2s ease-in-out;
     border-radius: 3em;
+    box-shadow: 0 0 10px 5px pink;
 }
 
 .grid .a{
@@ -129,14 +130,33 @@ body{
 }
 
 .wrapper_back.toggled > #title {
-  opacity: 0;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    z-index: 9999;
 }
 
-.wrapper_back.toggled > #icon {
-  opacity: 1;
+.wrapper_back > #title {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Lugrasimo', cursive;
 }
 
 .wrapper_back.toggled > #size_grid  img {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.name {
+    font-family: 'Sacramento', cursive;
+    font-size: 3em;
+}
+
+.centered {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
